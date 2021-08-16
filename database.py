@@ -11,3 +11,4 @@ class Users(db.Model):
     name = db.Column("name", db.String(100))
     email = db.Column("email", db.String(100))
     password = db.Column("password")
+
