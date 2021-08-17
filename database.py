@@ -1,7 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
-from server import app
-
-db = SQLAlchemy(app)
+from server import db
 
 
 class Users(db.Model):
@@ -9,4 +7,4 @@ class Users(db.Model):
     name = db.Column("name", db.String(100))
     email = db.Column("email", db.String(100))
     password = db.Column("password", db.String(12))
-    phone = db.Column("phone")
+    phone = db.Column("phone", db.Integer)
