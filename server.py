@@ -2,6 +2,9 @@ from flask import Flask, render_template, url_for
 import database
 
 app = Flask(__name__)
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///Users.sqlite3"
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+dtbs = database.db
 
 
 @app.route("/")
@@ -11,22 +14,27 @@ def index():
 
 @app.route("/about")
 def about():
-    return render_template("index.html")
+    return render_template("")
 
 
 @app.route("/login")
 def login():
-    return render_template("index.html")
+    return render_template("")
 
 
 @app.route("/signup")
 def signup():
-    return render_template("index.html")
+    return render_template("")
 
 
 @app.route("/<user>")
 def user():
-    return render_template("index.html")
+    return render_template("")
+
+
+@app.route("/<user>/xlsx_csv")
+def xlsx_csv():
+    return render_template("")
 
 
 if __name__ == '__main__':
