@@ -16,6 +16,14 @@ def xlsx(file):
         pass
 
 
+def csv(file):
+    pass
+
+
+def upload():
+    pass
+
+
 def login():
     pass
 
