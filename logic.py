@@ -1,10 +1,10 @@
 import pandas as pd
 from flask_admin import Admin
 from flask_login import LoginManager, UserMixin
-from flask_security import Security
 from flask import request
 from database import *
 from openpyxl import load_workbook
+from server import db
 
 
 def xlsx(file):
@@ -22,11 +22,16 @@ def csv(file):
     pass
 
 
-def upload():
+def upload(extension):
     file = request.files['']
     new_file = Charts(name=file.filename, data=file.read())
-    db.session.add(new_file)
-    db.session.commit()
+    if new_file != '':
+        file_ext = os.path.splitext(new_file)[1]
+        if file_ext not in extension:
+            return ''
+        else:
+            db.session.add(new_file)
+            db.session.commit()
 
 
 def login():

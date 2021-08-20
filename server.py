@@ -1,10 +1,13 @@
 from flask import Flask, render_template, url_for
+
+from logic import *
 from database import *
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+app.config['UPLOAD_EXTENSIONS'] = ['.xlsx', 'csv']
 
 db = SQLAlchemy(app)
 
@@ -34,8 +37,9 @@ def user():
     return render_template("")
 
 
-@app.route("/<user>/xlsx_csv")
-def xlsx_csv():
+@app.route("/<user>/xlsx_csv", methods=['POST'])
+def upload_xlsx_csv():
+    upload(extension=app.config['UPLOAD_EXTENSIONS'])
     return render_template("")
 
 
