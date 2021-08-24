@@ -32,21 +32,5 @@ def upload(extension, file):
             db.session.commit()
 
 
-def login(usr, password):
-    pass
-
-
-def logout():
-    pass
-
-
-def signup(usr, password, email, phone):
-    pass
-
-
-def admin():
-    pass
-
-
 def download():
     pass
