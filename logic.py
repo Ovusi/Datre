@@ -22,8 +22,7 @@ def csv(file):
     pass
 
 
-def upload(extension):
-    file = request.files['']
+def upload(extension, file):
     new_file = Charts(name=file.filename, data=file.read())
     if new_file != '':
         file_ext = os.path.splitext(new_file)[1]

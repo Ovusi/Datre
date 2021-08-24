@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, request
 
 from logic import *
 from database import *
@@ -39,8 +39,12 @@ def user():
 
 @app.route("/<user>/xlsx_csv", methods=['POST'])
 def upload_xlsx_csv():
-    upload(extension=app.config['UPLOAD_EXTENSIONS'])
-    return render_template("")
+    file = request.files['']
+    if file is None:
+        return ''
+    else:
+        upload(extension=app.config['UPLOAD_EXTENSIONS'], file=file)
+        return render_template("")
 
 
 if __name__ == '__main__':
