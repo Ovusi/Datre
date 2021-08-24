@@ -24,11 +24,17 @@ def about():
 
 @app.route("/login")
 def login():
+    user_name = request.form[""]
+    password = request.form[""]
     return render_template("")
 
 
 @app.route("/signup")
 def signup():
+    user_name = request.form[""]
+    password = request.form[""]
+    email_address = request.form[""]
+    phone_no = request.form[""]
     return render_template("")
 
 

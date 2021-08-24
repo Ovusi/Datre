@@ -1,7 +1,6 @@
 import pandas as pd
 from flask_admin import Admin
 from flask_login import LoginManager, UserMixin
-from flask import request
 from database import *
 from openpyxl import load_workbook
 from server import db
@@ -33,11 +32,15 @@ def upload(extension, file):
             db.session.commit()
 
 
-def login():
+def login(usr, password):
     pass
 
 
 def logout():
+    pass
+
+
+def signup(usr, password, email, phone):
     pass
 
 
