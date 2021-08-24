@@ -20,7 +20,7 @@ def csv(file):
 
 
 def upload(extension, file):
-    new_file = Charts(name=file.filename, data=file.read())
+    new_file = Charts(name=file.filename, data=file) 
     if new_file != '':
         file_ext = os.path.splitext(new_file)[1]
         if file_ext not in extension:
