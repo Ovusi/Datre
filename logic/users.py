@@ -1,4 +1,4 @@
-from flask_login import LoginManager
+from flask_login import LoginManager, UserMixin
 
 
 def login(usr, password):

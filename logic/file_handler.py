@@ -1,6 +1,4 @@
 import pandas as pd
-from flask_admin import Admin
-from flask_login import LoginManager, UserMixin
 from database import *
 from openpyxl import load_workbook
 from server import db
