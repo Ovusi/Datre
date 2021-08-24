@@ -1,7 +1,7 @@
 import pandas as pd
 from database import *
 from openpyxl import load_workbook
-from server import db
+from app import db
 
 
 def xlsx(file):
