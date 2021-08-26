@@ -18,7 +18,7 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/login")
+@app.route("/login", methods=['POST', 'GET'])
 def login():
     if request.method == 'POST':
 
@@ -42,7 +42,7 @@ def login():
     return render_template("")
 
 
-@app.route("/signup")
+@app.route("/signup", methods=['POST', 'GET'])
 def signup():
     if request.method == 'POST':
         user_name = request.form[""]
@@ -71,7 +71,7 @@ def signup():
     return render_template("")
 
 
-@app.route("/<user>/xlsx_csv", methods=['POST'])
+@app.route("/<user>/xlsx_csv", methods=['POST', 'GET'])
 def upload_xlsx_csv():
     file = request.files['']
     if not file:
