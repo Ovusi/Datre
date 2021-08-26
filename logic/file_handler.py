@@ -18,15 +18,10 @@ def csv(file):
     pass
 
 
-def upload(extension, file):
-    new_file = Charts(name=file.filename, data=file.read()) 
-    if new_file != '':
-        file_ext = os.path.splitext(new_file)[1]
-        if file_ext not in extension:
-            return ''
-        else:
-            db.session.add(new_file)
-            db.session.commit()
+def upload(file):
+    new_file = Charts(name=file.filename, data=file.read())
+    db.session.add(new_file)
+    db.session.commit()
 
 
 def download():
