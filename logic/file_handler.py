@@ -1,5 +1,4 @@
-import pandas as pd
-from database import *
+from database.database import *
 from openpyxl import load_workbook
 from app import db
 
