@@ -1,6 +1,5 @@
 from database.database import *
 from openpyxl import load_workbook
-from app import db
 
 
 def xlsx(file):
@@ -18,10 +17,10 @@ def csv(file):
     pass
 
 
-def upload(file):
+def upload(file, database):
     new_file = Charts(name=file.filename, data=file.read())
-    db.session.add(new_file)
-    db.session.commit()
+    database.session.add(new_file)
+    database.session.commit()
 
 
 def download():

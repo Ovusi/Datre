@@ -62,7 +62,7 @@ def signup():
 
         if error is None:
             try:
-                signup(user_name, password, email_address, phone_no)
+                signup(user_name, password, email_address, phone_no, database=db)
             except Exception as e:
                 flash(e)
             else:
@@ -78,7 +78,7 @@ def upload_xlsx_csv():
         flash('No file selected')
     else:
         try:
-            upload(file=file)
+            upload(file=file, database=db)
         except Exception as e:
             flash(e)
         else:
