@@ -93,7 +93,7 @@ def user():
 
 
 @app.route("/<admin>")
-def admin():
+def my_admin():
     return render_template("")
 
 
