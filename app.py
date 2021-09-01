@@ -84,7 +84,7 @@ def upload_xlsx_csv():
                 flash(e)
             else:
                 flash("File uploaded successfully")
-                return render_template("", data=xlsx())
+                return render_template("", data=xlsx(file))
     return render_template("")
 
 
