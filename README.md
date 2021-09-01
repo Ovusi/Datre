@@ -10,3 +10,8 @@ graphically in charts and tables.
 2. Charts visualization of data read from .xlsx and .csv files.
 
 3. Download executive summary in .html format.
+
+
+### **Tools and Frameworks used:**
+1. Flask.
+2. Google Charts.
