@@ -85,6 +85,7 @@ def upload_xlsx_csv():
             else:
                 flash("File uploaded successfully")
                 return render_template("", data=xlsx(file))
+                # TODO: If this doesnt work, try redirect(url_for("")) instead.
     return render_template("")
 
 
