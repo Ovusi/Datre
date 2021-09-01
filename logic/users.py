@@ -2,6 +2,10 @@ from flask_login import LoginManager, UserMixin
 from database.database import *
 
 
+""" This module contains user related functions.
+    login(), logout(), signup() etc."""
+
+
 def login(usr, password):
     pass
 

@@ -2,6 +2,10 @@ from database.database import *
 from openpyxl import load_workbook
 
 
+""" This module contains functions for file handling and manipulation.
+    """
+
+
 def xlsx(file):
     workbook = load_workbook(filename=file)
     workbook.sheetnames()
