@@ -1,5 +1,6 @@
 from database.database import *
-from openpyxl import load_workbook
+import json
+import pandas as pd
 
 
 """ This module contains functions for file handling and manipulation.
@@ -7,18 +8,21 @@ from openpyxl import load_workbook
 
 
 def xlsx(file):
-    workbook = load_workbook(filename=file)
-    workbook.sheetnames()
-    sheet = workbook.active
-
-    for row in sheet.iter_rows(min_row=1, max_row=2, min_col=1, max_col=3, values_only=True):
-        pass
-    for col in sheet.iter_cols(min_row=1, max_row=2, min_col=1, max_col=3, values_only=True):
-        pass
+    # read the data from the xlsx file and convert to dict.
+    # get the values of the dict and parse.
+    data = pd.read_excel(file)
+    result = data.to_dict(orient="values")
+    parsed = json.loads(result)
+    return json.dumps(parsed)
 
 
 def csv(file):
-    pass
+    # read the data from the csv file and convert to dict.
+    # get the values of the dict and parse.
+    data = pd.read_csv(file)
+    result = data.to_dict(orient="values")
+    parsed = json.loads(result)
+    return json.dumps(parsed)
 
 
 def upload(file, database):

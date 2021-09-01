@@ -73,17 +73,18 @@ def signup():
 
 @app.route("/<user>/xlsx_csv", methods=['POST', 'GET'])
 def upload_xlsx_csv():
-    file = request.files['']
-    if not file:
-        flash('No file selected')
-    else:
-        try:
-            upload(file=file, database=db)
-        except Exception as e:
-            flash(e)
-        else:
-            flash("File uploaded successfully")
-            return redirect(url_for(""))
+    if request.method == 'POST':
+        file = request.files['']
+        if not file:
+            flash('No file selected')
+        if file:
+            try:
+                upload(file=file, database=db)
+            except Exception as e:
+                flash(e)
+            else:
+                flash("File uploaded successfully")
+                return render_template("", data=xlsx())
     return render_template("")
 
 
