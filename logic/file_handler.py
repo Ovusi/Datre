@@ -13,7 +13,7 @@ def xlsx(file):
     data = pd.read_excel(file)
     result = data.to_dict(orient="values")
     parsed = json.loads(result)
-    return json.dumps(parsed)
+    return json.dumps(parsed, indent=0)
 
 
 def csv(file):
@@ -22,7 +22,7 @@ def csv(file):
     data = pd.read_csv(file)
     result = data.to_dict(orient="values")
     parsed = json.loads(result)
-    return json.dumps(parsed, indent=1)
+    return json.dumps(parsed, indent=0)
 
 
 def upload(file, database):
