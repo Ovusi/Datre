@@ -1,5 +1,5 @@
 from flask import render_template, request, redirect, url_for, flash, Blueprint
-
+from app import db
 signup_bp = Blueprint('signup_bp', __name__)
 
 
