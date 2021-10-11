@@ -1,5 +1,5 @@
 from flask_login import LoginManager, UserMixin
-from database.database import *
+from models.database import *
 
 
 """ This module contains user related functions.

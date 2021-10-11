@@ -19,8 +19,8 @@ class Charts(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('users._id'))
 
 
-if 'database.db' in os.getcwd():
+if 'models.db' in os.getcwd():
     pass
-if 'database.db' not in os.getcwd():
+if 'models.db' not in os.getcwd():
     db.create_all()
     db.session.commit()

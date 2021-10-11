@@ -1,4 +1,4 @@
-from database.database import *
+from models.database import *
 import json
 import pandas as pd
 
